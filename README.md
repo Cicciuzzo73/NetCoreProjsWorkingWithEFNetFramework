@@ -2,7 +2,9 @@ This solution shows how to consume an EF6 library (written in .Net Framework 4.7
 
 Project <b>OldEF6Library</b> is the original API that we want to reuse in our .Net core projects. The EF refers to a database which contains just one sample table: "Users" (Id int primary key, Name varchar (200)). It uses the DB first approach with the EDMX model.
 
-Project <b>CoreConsoleApp</b> is a .Net core 3.1 console application. It consumes the OldEF6Library. To configure the connection string that the library will use, we insert it in App.config file. The "Old" library will use this file to configure the EF source. 
+Project <b>CoreConsoleApp</b> is a .Net core 3.1 console application. It consumes the OldEF6Library. To configure the connection string that the library will use, we insert it in an App.config file. The "Old" library will use this file to configure the EF source. 
+
+Project <b>CoreWebApp</b> in a .Net Core 3.1 MVC web application. As with the CoreConsolApp project, the EF configuration strings are in a file called App.config. 
 
 Project <b>CoreFunction</b> is a .Net core 3.1 Azure function project, which you can run locally or deploy to Azure. Differently from the other two projects, the original EF library  needs a small refactoring to allow the function to use it. This is because the version v2 and v3 of Azure functions don't support the ConfigurationManager API. This statement generates an exception as it uses the ConfigurationManager behind the curtains and it cannot read the UserEntities entry in a configuration file:
 
@@ -17,6 +19,8 @@ So, it is necessary to inject a connection string from the CoreFunction assembly
         {
         }
 to configure the connection string in the .Net core function (client), we can use environment variables (corresponding to app settings in Azure, app settings). In Visual studio, these variables can be configures in the project proprerties:
+
+     OldEF6Class.ConnectionString = Environment.GetEnvironmentVariable("UserEntitiesConnectionString");
 
 The variables are read by our project via this API:
 
