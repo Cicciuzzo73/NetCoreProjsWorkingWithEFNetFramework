@@ -1,4 +1,4 @@
-This solution shows how to consume an EF6 library (written in .Net Framework 4.7.2) from newer .Net Core projects.
+This solution shows how to consume an EF6 library (written in .Net Framework 4.7.2) from newer .Net Core projects: a console application, a web application, an Azure function.
 
 Project <b>OldEF6Library</b> is the original Entity Framework 6 project that we want to reuse in our .Net core projects. 
 The EF project points to a database which contains just one sample table: "Users", which can be recreated like this:
