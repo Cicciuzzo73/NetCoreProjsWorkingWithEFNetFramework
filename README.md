@@ -31,12 +31,13 @@ _Locally_
 ![EnvironmentVariables in Visual Studio](/docs/ConnectionStringCoreFunction.PNG)
 
 _Azure_
+![EnvironmentVariables in Azure](/docs/ConnectionStringCoreFunction Azure.PNG)
 
-
-In the client project, these variables are read with the this instruction:
+In the client project, these variables are read (both locally and in Azure) with the this instruction:
 
      OldEF6Class.ConnectionString = Environment.GetEnvironmentVariable("UserEntitiesConnectionString");
 
+Good luck!
 
 
 
