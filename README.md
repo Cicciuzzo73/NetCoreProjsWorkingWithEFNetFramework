@@ -27,7 +27,9 @@ Unfortunately, the class where we need to create a new constructor is generated 
 In order to configure the connection string in the .Net core function (client), we can use environment variables (corresponding to app settings in Azure). 
 
 Locally
-gih
+
+![Screenshot](ConnectionStringCoreFunction.PNG)
+
 
 Azure
 
