@@ -34,9 +34,11 @@ We could use the mechanism of partial classes to prevent the destruction of the 
 In order to configure the connection string in the .Net core function (client), we use environment variables (corresponding to app settings in Azure). 
 
 _Locally_
+
 ![EnvironmentVariables in Visual Studio](/docs/ConnectionStringCoreFunction.PNG)
 
 _Azure_
+
 ![EnvironmentVariables in Azure](/docs/ConnectionStringCoreFunctionAzure.PNG)
 
 In the client project, these variables are read (both locally and in Azure) with the this instruction:
