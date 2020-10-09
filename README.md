@@ -37,7 +37,7 @@ _Locally_
 ![EnvironmentVariables in Visual Studio](/docs/ConnectionStringCoreFunction.PNG)
 
 _Azure_
-![EnvironmentVariables in Azure](/docs/ConnectionStringCoreFunction Azure.PNG)
+![EnvironmentVariables in Azure](/docs/ConnectionStringCoreFunctionAzure.PNG)
 
 In the client project, these variables are read (both locally and in Azure) with the this instruction:
 
